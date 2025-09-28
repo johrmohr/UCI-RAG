@@ -190,7 +190,7 @@ def main():
 
                 # Display AI Summary first (not in tabs)
                 st.markdown("---")
-                st.markdown("### AI-Generated Summary")
+                st.markdown("### Summary")
                 if 'answer' in results:
                     st.markdown(results['answer'])
                 else:
