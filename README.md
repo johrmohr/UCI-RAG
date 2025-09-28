@@ -1,8 +1,8 @@
-# UCI Research Intelligence Demo
+# UCI Research RAG Demo
 
 A **demonstration** of a RAG (Retrieval-Augmented Generation) system for academic research discovery. This is a proof-of-concept showcasing how AI can help researchers find and understand academic papers through natural language queries.
 
-## 🚀 Live Demo
+## Live Demo
 
 **[Try the Demo →](https://uci-research-intelligence.streamlit.app/)**
 
@@ -10,13 +10,13 @@ Ask questions like: *"What research has been done on quantum computing?"* or *"S
 
 ---
 
-## ⚠️ Important Note
+## Important Note
 
 **This is a DEMO system** using sample academic papers from ArXiv. It does **not** contain real UCI research data or represent actual UCI faculty research. The system demonstrates the technical architecture and capabilities of a research intelligence platform.
 
 ---
 
-## 🏗️ How It Works (RAG Architecture)
+## How It Works (RAG Architecture)
 
 ```
 User Query → Semantic Search → Retrieve Relevant Papers → AI Generation → Response
@@ -37,7 +37,7 @@ User Query → Semantic Search → Retrieve Relevant Papers → AI Generation �
 
 ---
 
-## 📁 Codebase Structure
+## Codebase Structure
 
 ```
 ├── streamlit_app.py          # Main app entry point
@@ -55,23 +55,23 @@ User Query → Semantic Search → Retrieve Relevant Papers → AI Generation �
 
 ---
 
-## 🎯 What This Demonstrates
+## What This Demonstrates
 
 ### RAG Pipeline Capabilities
-- ✅ **Semantic Search**: Find papers by meaning, not just keywords
-- ✅ **Context Retrieval**: Get relevant information from multiple sources
-- ✅ **AI Generation**: Synthesize answers from retrieved content
-- ✅ **Source Attribution**: Show which papers informed the answer
+- **Semantic Search**: Find papers by meaning, not just keywords
+- **Context Retrieval**: Get relevant information from multiple sources
+- **AI Generation**: Synthesize answers from retrieved content
+- **Source Attribution**: Show which papers informed the answer
 
 ### Technical Implementation
-- ✅ **Vector Embeddings**: Convert text to searchable vectors
-- ✅ **Similarity Search**: Find most relevant content quickly
-- ✅ **Prompt Engineering**: Structure AI queries effectively
-- ✅ **Web Deployment**: Production-ready Streamlit app
+- **Vector Embeddings**: Convert text to searchable vectors
+- **Similarity Search**: Find most relevant content quickly
+- **Prompt Engineering**: Structure AI queries effectively
+- **Web Deployment**: Production-ready Streamlit app
 
 ---
 
-## 🚀 Running Locally
+## Running Locally
 
 ```bash
 # 1. Clone the repo
@@ -89,7 +89,7 @@ streamlit run streamlit_app.py
 
 ---
 
-## 📊 Sample Dataset
+## Sample Dataset
 
 The demo uses **120 research papers** from ArXiv covering:
 - Quantum Physics
@@ -102,7 +102,7 @@ All papers are publicly available and used for demonstration purposes only.
 
 ---
 
-## 🎓 Educational Purpose
+## Educational Purpose
 
 This project demonstrates:
 - How to build a **RAG system** from scratch
@@ -111,24 +111,4 @@ This project demonstrates:
 - **Web deployment** of ML applications
 - **Data pipeline** development for research content
 
-Perfect for learning about AI applications in academic research and information retrieval.
-
----
-
-## 🤝 Contributing
-
-This is an open-source demo! Feel free to:
-- Fork the repository
-- Experiment with the code
-- Suggest improvements
-- Use it as a learning resource
-
----
-
-## 📄 License
-
-MIT License - free to use and modify.
-
----
-
-**Built to demonstrate RAG architecture and AI-powered research discovery** 🔬✨
+**Built to demonstrate RAG architecture and AI-powered research discovery**
