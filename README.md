@@ -37,24 +37,6 @@ User Query → Semantic Search → Retrieve Relevant Papers → AI Generation �
 
 ---
 
-## Codebase Structure
-
-```
-├── streamlit_app.py          # Main app entry point
-├── frontend/app.py           # Web interface
-├── rag_pipeline/             # AI processing
-│   ├── rag_system.py        # Core RAG logic
-│   └── search_demo.py       # Search functionality
-├── data_generation/          # Data collection
-│   ├── collect_arxiv_data.py # Gets papers from ArXiv
-│   └── uci_research_data.json # Sample dataset (120 papers)
-├── embeddings/               # Vector database
-│   └── create_embeddings.py # Creates searchable vectors
-└── requirements.txt          # Dependencies
-```
-
----
-
 ## What This Demonstrates
 
 ### RAG Pipeline Capabilities

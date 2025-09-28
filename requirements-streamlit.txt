@@ -1,29 +1,8 @@
-# Streamlit Cloud Requirements - Minimal dependencies for deployment
-# Core dependencies only - no development tools
+# Backup requirements file - Python 3.13 compatible
+# Same as main requirements.txt
 
-# Frontend
 streamlit==1.29.0
-streamlit-chat==0.1.1
-
-# Data processing
-pandas==2.1.4
-numpy==1.26.3
-
-# Vector database and embeddings
-chromadb==0.4.22
-sentence-transformers==2.2.2
-
-# AWS for Claude integration
-boto3==1.34.14
-
-# Environment management
-python-dotenv==1.0.0
-
-# Visualization
+pandas==2.2.3
+numpy==2.0.2
 plotly==5.18.0
-
-# HTTP requests
-requests==2.31.0
-
-# JSON handling
-pydantic==2.5.3
+python-dotenv==1.0.0

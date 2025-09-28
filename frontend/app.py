@@ -15,12 +15,27 @@ sys.path.append(str(Path(__file__).parent.parent))
 
 from rag_pipeline.rag_system import RAGPipeline
 
-# Page configuration
+# Page configuration - hide sidebar completely
 st.set_page_config(
     page_title="UCI Research Intelligence",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
+
+# CSS to hide sidebar and toggle arrow completely
+st.markdown("""
+<style>
+    /* Hide the sidebar */
+    [data-testid="stSidebar"] {
+        display: none;
+    }
+
+    /* Hide the sidebar toggle button/arrow */
+    [data-testid="collapsedControl"] {
+        display: none;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Custom CSS - Simplified and reliable
 def load_css():
