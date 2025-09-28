@@ -1,0 +1,74 @@
+{
+  "collection_timestamp": "2025-09-26T15:52:31.708709",
+  "upload_timestamp": "2025-09-26T15:52:31.708724",
+  "bucket_name": "uci-research-poc-937596605408-ady2uciw",
+  "region": "us-west-2",
+  "files_uploaded": [
+    {
+      "file_name": "papers_temp.json",
+      "s3_key": "raw-data/papers/arxiv_papers.json",
+      "size": 208650,
+      "checksum": "02ef6cba2ca69a4934e2cffc460f0e913af58f63da10a6fb708e7f0333c6d8dc",
+      "verified": true
+    },
+    {
+      "file_name": "faculty_temp.json",
+      "s3_key": "raw-data/faculty/faculty_profiles.json",
+      "size": 1758,
+      "checksum": "6cbe9eecf58ea61cbc302cef07435d4f48cd4619e5f2f7362c7bb085d5327bff",
+      "verified": true
+    },
+    {
+      "file_name": "grants_temp.json",
+      "s3_key": "raw-data/grants/nsf_grants.json",
+      "size": 22514,
+      "checksum": "12160a52780157928e4b226a501a68eb22a59483067f5ed6afa46fb4928cfd51",
+      "verified": true
+    }
+  ],
+  "statistics": {
+    "papers": {
+      "total_papers": 120,
+      "categories": {
+        "hep-th": 35,
+        "quant-ph": 34,
+        "gr-qc": 33,
+        "physics.bio-ph": 33,
+        "cond-mat.soft": 13,
+        "hep-ph": 7,
+        "astro-ph.CO": 7,
+        "astro-ph.IM": 6,
+        "cond-mat.stat-mech": 5,
+        "math-ph": 5
+      },
+      "year_distribution": {
+        "2025": 120
+      },
+      "top_research_areas": {},
+      "avg_authors_per_paper": 3.9916666666666667
+    },
+    "faculty": {
+      "total_faculty": 3,
+      "departments": {
+        "Physics and Astronomy": 3
+      },
+      "top_research_interests": {},
+      "avg_interests_per_faculty": 0.0
+    },
+    "grants": {
+      "total_grants": 12,
+      "year_distribution": {
+        "Unknown": 12
+      },
+      "total_funding": 894270.0,
+      "avg_grant_amount": 74522.5
+    }
+  },
+  "upload_summary": {
+    "total_files": 3,
+    "successful": 3,
+    "failed": 0,
+    "total_size": 232922,
+    "total_upload_time": 0.5853011608123779
+  }
+}

@@ -1,0 +1,14 @@
+[theme]
+primaryColor = "#FDB515"  # UCI Gold
+backgroundColor = "#202124"
+secondaryBackgroundColor = "#303134"
+textColor = "#FFFFFF"
+font = "sans serif"
+
+[server]
+maxUploadSize = 50
+enableCORS = false
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false

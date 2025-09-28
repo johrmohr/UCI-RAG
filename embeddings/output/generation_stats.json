@@ -1,0 +1,13 @@
+{
+  "papers_processed": 120,
+  "faculty_processed": 3,
+  "chunks_created": 0,
+  "total_embeddings": 123,
+  "memory_usage": {
+    "papers": {
+      "initial_mb": 371.359375,
+      "final_mb": 422.89453125,
+      "used_mb": 51.53515625
+    }
+  }
+}

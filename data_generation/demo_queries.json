@@ -1,0 +1,290 @@
+{
+  "metadata": {
+    "generated_at": "2025-09-26T15:39:23.133634",
+    "data_source": "data_generation/uci_research_data.json",
+    "total_queries": 24,
+    "papers_analyzed": 120,
+    "faculty_analyzed": 3
+  },
+  "statistics": {
+    "by_category": {
+      "simple_lookup": 4,
+      "filtered_search": 4,
+      "trend_analysis": 3,
+      "domain_specific": 3,
+      "analytical": 4,
+      "faculty_search": 2,
+      "temporal": 2,
+      "methodology": 1,
+      "explanation": 1
+    },
+    "by_difficulty": {
+      "easy": 9,
+      "medium": 10,
+      "hard": 5
+    },
+    "data_insights": {
+      "prolific_authors": [
+        [
+          "Margaret S. Cheung",
+          2
+        ],
+        [
+          "Victor Hugo M. Ramos",
+          2
+        ],
+        [
+          "Jo\u00e3o Paulo M. Pitelli",
+          2
+        ],
+        [
+          "Jo\u00e3o C. A. Barata",
+          2
+        ],
+        [
+          "Marco Vona",
+          2
+        ]
+      ],
+      "top_categories": [
+        [
+          "hep-th",
+          35
+        ],
+        [
+          "quant-ph",
+          34
+        ],
+        [
+          "gr-qc",
+          33
+        ],
+        [
+          "physics.bio-ph",
+          33
+        ],
+        [
+          "cond-mat.soft",
+          13
+        ]
+      ],
+      "trending_topics": [
+        [
+          "black hole",
+          3
+        ],
+        [
+          "gravitational",
+          3
+        ],
+        [
+          "based",
+          3
+        ],
+        [
+          "energy",
+          3
+        ],
+        [
+          "stress",
+          2
+        ],
+        [
+          "application",
+          2
+        ],
+        [
+          "active",
+          2
+        ],
+        [
+          "hydrodynamic",
+          2
+        ],
+        [
+          "dynamics",
+          2
+        ],
+        [
+          "negative",
+          1
+        ]
+      ]
+    }
+  },
+  "queries": [
+    {
+      "query": "Show me papers by Margaret S. Cheung",
+      "category": "simple_lookup",
+      "difficulty": "easy",
+      "expected_results": "Should return approximately 2 papers",
+      "type": "author_search"
+    },
+    {
+      "query": "What has Victor Hugo M. Ramos published on gr-qc?",
+      "category": "filtered_search",
+      "difficulty": "medium",
+      "expected_results": "Papers by Victor Hugo M. Ramos in category gr-qc",
+      "type": "author_topic_search"
+    },
+    {
+      "query": "Find recent papers in hep-th",
+      "category": "simple_lookup",
+      "difficulty": "easy",
+      "expected_results": "Should return papers from hep-th category (35 total available)",
+      "type": "category_search"
+    },
+    {
+      "query": "Show me hep-th papers about particle",
+      "category": "filtered_search",
+      "difficulty": "medium",
+      "expected_results": "Papers in hep-th mentioning particle",
+      "type": "category_keyword_search"
+    },
+    {
+      "query": "Find recent papers in quant-ph",
+      "category": "simple_lookup",
+      "difficulty": "easy",
+      "expected_results": "Should return papers from quant-ph category (34 total available)",
+      "type": "category_search"
+    },
+    {
+      "query": "Show me quant-ph papers about gravitational",
+      "category": "filtered_search",
+      "difficulty": "medium",
+      "expected_results": "Papers in quant-ph mentioning gravitational",
+      "type": "category_keyword_search"
+    },
+    {
+      "query": "Find recent papers in gr-qc",
+      "category": "simple_lookup",
+      "difficulty": "easy",
+      "expected_results": "Should return papers from gr-qc category (33 total available)",
+      "type": "category_search"
+    },
+    {
+      "query": "Show me gr-qc papers about dark matter",
+      "category": "filtered_search",
+      "difficulty": "medium",
+      "expected_results": "Papers in gr-qc mentioning dark matter",
+      "type": "category_keyword_search"
+    },
+    {
+      "query": "What are the latest advances in black hole?",
+      "category": "trend_analysis",
+      "difficulty": "medium",
+      "expected_results": "Recent papers mentioning black hole (found in 3 recent papers)",
+      "type": "trending_search"
+    },
+    {
+      "query": "What are the latest advances in gravitational?",
+      "category": "trend_analysis",
+      "difficulty": "medium",
+      "expected_results": "Recent papers mentioning gravitational (found in 3 recent papers)",
+      "type": "trending_search"
+    },
+    {
+      "query": "What are the latest advances in based?",
+      "category": "trend_analysis",
+      "difficulty": "medium",
+      "expected_results": "Recent papers mentioning based (found in 3 recent papers)",
+      "type": "trending_search"
+    },
+    {
+      "query": "Show me recent work on quantum computing and quantum information",
+      "category": "domain_specific",
+      "difficulty": "easy",
+      "expected_results": "Should return quantum-related papers (15 available)",
+      "type": "quantum_search"
+    },
+    {
+      "query": "Find papers about applications in quantum physics",
+      "category": "domain_specific",
+      "difficulty": "medium",
+      "expected_results": "Papers combining applications and quantum concepts",
+      "type": "quantum_specific_search"
+    },
+    {
+      "query": "Show me recent astrophysics and cosmology papers",
+      "category": "domain_specific",
+      "difficulty": "easy",
+      "expected_results": "Astrophysics papers (1 available)",
+      "type": "astro_search"
+    },
+    {
+      "query": "Who are the most active researchers in quantum physics this year?",
+      "category": "analytical",
+      "difficulty": "hard",
+      "expected_results": "Authors with multiple quantum papers in 2023-2024",
+      "type": "active_researcher_analysis"
+    },
+    {
+      "query": "What are the emerging research areas combining physics and computer science?",
+      "category": "analytical",
+      "difficulty": "hard",
+      "expected_results": "Papers showing CS-physics intersection, especially ML applications",
+      "type": "interdisciplinary_analysis"
+    },
+    {
+      "query": "What is Victor Hugo M. Ramos working on?",
+      "category": "faculty_search",
+      "difficulty": "easy",
+      "expected_results": "Information about Victor Hugo M. Ramos and their research",
+      "type": "faculty_lookup"
+    },
+    {
+      "query": "What is Jo\u00e3o Paulo M. Pitelli working on?",
+      "category": "faculty_search",
+      "difficulty": "easy",
+      "expected_results": "Information about Jo\u00e3o Paulo M. Pitelli and their research",
+      "type": "faculty_lookup"
+    },
+    {
+      "query": "Show me papers published in the last month",
+      "category": "temporal",
+      "difficulty": "easy",
+      "expected_results": "Most recent papers (found 120 papers from 2023+)",
+      "type": "recent_papers"
+    },
+    {
+      "query": "What were the breakthrough papers in 2024?",
+      "category": "temporal",
+      "difficulty": "hard",
+      "expected_results": "Significant papers from 2024, possibly with high impact",
+      "type": "breakthrough_analysis"
+    },
+    {
+      "query": "Find papers with international collaborations",
+      "category": "analytical",
+      "difficulty": "hard",
+      "expected_results": "Papers with authors from multiple institutions/countries",
+      "type": "collaboration_analysis"
+    },
+    {
+      "query": "Which papers use deep learning for physics problems?",
+      "category": "methodology",
+      "difficulty": "medium",
+      "expected_results": "Papers mentioning neural networks, deep learning in physics context",
+      "type": "method_search"
+    },
+    {
+      "query": "Show me experimental physics papers versus theoretical ones",
+      "category": "analytical",
+      "difficulty": "hard",
+      "expected_results": "Classification of papers by experimental vs theoretical approach",
+      "type": "approach_classification"
+    },
+    {
+      "query": "Explain the latest research on dark matter",
+      "category": "explanation",
+      "difficulty": "medium",
+      "expected_results": "Summary of dark matter research (4 papers found)",
+      "type": "technical_explanation"
+    }
+  ],
+  "usage_notes": {
+    "easy": "Simple keyword or author lookups that should return direct matches",
+    "medium": "Queries requiring some filtering or combination of criteria",
+    "hard": "Complex analytical queries requiring reasoning across multiple papers"
+  }
+}

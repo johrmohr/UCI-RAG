@@ -1,0 +1,14 @@
+{
+  "bucket_name": "uci-research-poc-937596605408-ady2uciw",
+  "region": "us-west-2",
+  "account_id": "937596605408",
+  "folders": [
+    "raw-data/",
+    "embeddings/",
+    "metadata/",
+    "logs/"
+  ],
+  "created_date": "2025-09-23 00:27:35",
+  "bucket_arn": "arn:aws:s3:::uci-research-poc-937596605408-ady2uciw",
+  "console_url": "https://s3.console.aws.amazon.com/s3/buckets/uci-research-poc-937596605408-ady2uciw"
+}
