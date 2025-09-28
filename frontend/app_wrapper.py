@@ -123,23 +123,17 @@ def main():
     # Load custom CSS
     load_css()
 
-    # Title
+    # Title - Clean, no emoji
     st.markdown(
-        '<h1>🔬 UCI Research Intelligence System</h1>',
+        '<h1>UCI Research Intelligence System</h1>',
         unsafe_allow_html=True
     )
 
-    # Subtitle with mode indicator
-    if os.environ.get('USE_LITE_MODE') == 'True':
-        st.markdown(
-            '<p style="text-align: center; color: #969ba1; font-size: 1.1rem;">AI-Powered Research Discovery (Demo Mode)</p>',
-            unsafe_allow_html=True
-        )
-    else:
-        st.markdown(
-            '<p style="text-align: center; color: #969ba1; font-size: 1.1rem;">AI-Powered Research Discovery</p>',
-            unsafe_allow_html=True
-        )
+    # Simple subtitle without mode indicator
+    st.markdown(
+        '<p style="text-align: center; color: #969ba1; font-size: 1.1rem;">AI-Powered Research Discovery</p>',
+        unsafe_allow_html=True
+    )
 
     # Initialize RAG pipeline
     if 'rag' not in st.session_state:
@@ -166,21 +160,21 @@ def main():
 
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # Sample queries
+    # Sample queries - no emojis
     st.markdown("##### Try these sample queries:")
     col1, col2, col3, col4 = st.columns(4)
 
     sample_queries = [
-        "🔬 Quantum computing",
-        "🧬 Machine learning in physics",
-        "🌌 Dark matter research",
-        "⚛️ Condensed matter physics"
+        "Quantum computing",
+        "Machine learning physics",
+        "Dark matter research",
+        "Condensed matter"
     ]
 
     for col, sample in zip([col1, col2, col3, col4], sample_queries):
         with col:
             if st.button(sample, key=f"sample_{sample}"):
-                query = sample.replace("🔬 ", "").replace("🧬 ", "").replace("🌌 ", "").replace("⚛️ ", "")
+                query = sample
 
     # Handle search
     if (search_button or query) and query and st.session_state.rag:
@@ -191,88 +185,50 @@ def main():
                 results = st.session_state.rag.query(query, k=5)
                 elapsed_time = time.time() - start_time
 
-                # Display results
-                st.success(f"✅ Found relevant research! ({elapsed_time:.2f}s)")
+                # Display results - no success message with emoji
+                st.markdown(f"Found relevant research in {elapsed_time:.2f} seconds")
 
-                # Create tabs for results
-                tab1, tab2, tab3 = st.tabs(["📄 Research Papers", "🤖 AI Summary", "📊 Query Stats"])
+                # Display AI Summary first (not in tabs)
+                st.markdown("---")
+                st.markdown("### AI-Generated Summary")
+                if 'answer' in results:
+                    st.markdown(results['answer'])
+                else:
+                    st.info("No AI summary available.")
 
-                with tab1:
-                    if 'source_papers' in results and results['source_papers']:
-                        for i, paper in enumerate(results['source_papers'][:5]):
-                            with st.expander(f"📄 {paper.get('title', 'Unknown Title')}", expanded=(i==0)):
-                                # Paper metadata
-                                st.markdown(f"**Authors:** {', '.join(paper.get('authors', ['Unknown']))}")
-                                st.markdown(f"**Year:** {paper.get('year', 'N/A')}")
-                                if 'arxiv_id' in paper:
-                                    st.markdown(f"**arXiv ID:** {paper['arxiv_id']}")
+                # Then display Research Papers
+                st.markdown("---")
+                st.markdown("### Relevant Research Papers")
 
-                                # Abstract
-                                st.markdown("**Abstract:**")
-                                st.markdown(paper.get('abstract', 'No abstract available')[:500] + "...")
+                if 'source_papers' in results and results['source_papers']:
+                    for i, paper in enumerate(results['source_papers'][:5], 1):
+                        st.markdown(f"#### Paper {i}: {paper.get('title', 'Unknown Title')}")
 
-                                # Relevance score
-                                if 'relevance_score' in paper:
-                                    st.progress(paper['relevance_score'], text=f"Relevance: {paper['relevance_score']:.2%}")
-                    else:
-                        st.info("No papers found for this query.")
+                        # Paper metadata in a clean format
+                        st.markdown(f"**Authors:** {', '.join(paper.get('authors', ['Unknown']))}")
+                        st.markdown(f"**Year:** {paper.get('year', 'N/A')}")
 
-                with tab2:
-                    st.markdown("### AI-Generated Summary")
-                    if 'answer' in results:
-                        st.markdown(results['answer'])
-                    else:
-                        st.info("No AI summary available.")
+                        if 'arxiv_id' in paper:
+                            st.markdown(f"**arXiv ID:** {paper['arxiv_id']}")
 
-                with tab3:
-                    st.markdown("### Query Statistics")
+                        # Abstract
+                        st.markdown("**Abstract:**")
+                        abstract = paper.get('abstract', 'No abstract available')
+                        # Show more of the abstract
+                        st.markdown(abstract[:800] + "..." if len(abstract) > 800 else abstract)
 
-                    col1, col2, col3 = st.columns(3)
+                        # Relevance score as a simple metric
+                        if 'relevance_score' in paper:
+                            st.markdown(f"**Relevance Score:** {paper['relevance_score']:.2%}")
 
-                    with col1:
-                        st.metric("Papers Retrieved", results.get('papers_used', 0))
-
-                    with col2:
-                        st.metric("Response Time", f"{elapsed_time:.2f}s")
-
-                    with col3:
-                        if 'cost_estimate' in results:
-                            cost = results['cost_estimate'].get('total_cost', 0)
-                            st.metric("Query Cost", f"${cost:.4f}")
-                        else:
-                            st.metric("Query Cost", "N/A")
-
-                    if 'confidence' in results:
-                        st.progress(results['confidence'], text=f"Confidence: {results['confidence']:.2%}")
+                        st.markdown("---")
+                else:
+                    st.info("No papers found for this query.")
 
             except Exception as e:
                 st.error(f"Error during search: {str(e)}")
 
-    # Footer with system info
-    st.markdown("---")
-
-    if st.session_state.rag:
-        try:
-            stats = st.session_state.rag.get_stats()
-            col1, col2, col3, col4 = st.columns(4)
-
-            with col1:
-                st.metric("Papers Indexed", stats.get('papers_indexed', 'N/A'))
-
-            with col2:
-                st.metric("Embedding Model", stats.get('embedding_model', 'N/A'))
-
-            with col3:
-                st.metric("LLM Model", stats.get('llm_model', 'N/A'))
-
-            with col4:
-                st.metric("System Status", stats.get('status', 'N/A'))
-        except:
-            pass
-
-    # Add disclaimer for demo mode
-    if os.environ.get('USE_LITE_MODE') == 'True':
-        st.info("🔔 Running in demo mode with sample data. Full functionality requires ML dependencies.")
+    # No footer with system stats - completely removed
 
 if __name__ == "__main__":
     main()
