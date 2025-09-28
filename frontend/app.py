@@ -13,7 +13,11 @@ from datetime import datetime
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent))
 
-from rag_pipeline.rag_system import RAGPipeline
+# Try to import full RAG pipeline, fall back to lite version if needed
+try:
+    from rag_pipeline.rag_system import RAGPipeline
+except ImportError:
+    from rag_pipeline.rag_system_lite import RAGPipelineLite as RAGPipeline
 
 # Page configuration - hide sidebar completely
 st.set_page_config(
