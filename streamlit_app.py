@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 UCI Research Intelligence System - Streamlit Cloud Deployment
-Entry point that loads the main frontend app
+Entry point that loads the appropriate version based on available dependencies
 """
 
 import streamlit as st
@@ -51,6 +51,19 @@ def setup_environment():
 # Setup environment
 setup_environment()
 
-# Import and run the main app
-from frontend.app import main
+# Check if we can use the full version by testing imports
+USE_LITE_MODE = False
+try:
+    # Test if heavy dependencies are available
+    import torch
+    import sentence_transformers
+    import chromadb
+except ImportError:
+    USE_LITE_MODE = True
+
+# Set environment variable for lite mode
+os.environ['USE_LITE_MODE'] = str(USE_LITE_MODE)
+
+# Now import and run the app
+from frontend.app_wrapper import main
 main()
